@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model DataTraining {
+  id String @id @default(uuid())
+  nhietDo String
+  doAm String
+  amThanh String
+  gas String
+  tinhTrang String
+  historyId String
+  history History @relation(fields: [historyId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model History {
+  id String @id @default(uuid())
+  dataTraining DataTraining[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
