@@ -16,7 +16,7 @@ const HistoryPage = ({ data }: HistoryPageProps) => {
   };
 
   return (
-    <div>
+    <div className="space-x-4">
       {data.map((data) => (
         <Button
           size="sm"

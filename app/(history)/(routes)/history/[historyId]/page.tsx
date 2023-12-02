@@ -29,7 +29,7 @@ const Detail = async ({ params }: DetailProps) => {
   return (
     <div>
       <div>
-        <h2 className=" text-3xl font-bold">Dữ liệu của ngày: {formatdate}</h2>
+        <h2 className="text-3xl font-bold">Dữ liệu của ngày: {formatdate}</h2>
         <DataTable columns={columns} data={datas} />
       </div>
     </div>
